@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url(https://soft14.storage.iran.liara.space/kar/45.png);
+            /*background-image: url(https://soft14.storage.iran.liara.space/md/tumblr_55e0fee136f48a4d9df49643fa894289_17fda1e2_500.gif);*/
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+
+            
+           position: fixed;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%, -50%);
+           width: 500px;
+           padding: 10px;
+           background-color: rgb(117, 69, 206);
+           border-radius: 20px;
+           box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+   
+        #todo-input {
+           width: 200px;
+           height: 30px;
+           padding: 5px;
+           background-color: rgb(230, 173, 213);
+           color: white;
+           border: 2px solid rgb(139, 0, 139);
+           border-radius: 5px;
+           font-family: Arial, sans-serif;
+        }
+
+        input[type="number"] {
+           width: 200px;
+           height: 30px;
+           padding: 5px;
+           background-color: rgb(230, 173, 213);
+           color: white;
+           border: 2px solid rgb(139, 0, 139);
+           border-radius: 5px;
+           font-family: Arial, sans-serif;
+        }
+        button {
+            background-color: #0066ff8c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        p{
+            color: #00f7ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="number" id="input1" placeholder="عدد اول را وارد کنید:">
+        <input type="number" id="input2" placeholder="عدد دوم را وارد کنید:">
+        <input type="number" id="input3" placeholder="عدد سوم را وارد کنید:">
+        <button onclick="calculate()">محاسبه</button>
+        <p id="Text"></p>
+    </div>
+
+    <script>
+        let i = 0; // مقدار اولیه i را برابر با 0 قرار می‌دهیم
+
+        function calculate() {
+            const x = parseFloat(document.querySelector('#input1').value);
+            const y = parseFloat(document.querySelector('#input2').value);
+            const z = parseFloat(document.querySelector('#input3').value);
+
+            if (!isNaN(x) && !isNaN(y) && !isNaN(z)) {// اگر تمامی این شرط ها برقرار بود این کار را انجام بده
+                const index = (x + y + z) / 3; // جمع کردن و تقسیم بر 3
+                i += index; // اضافه کردن نتیجه به i
+                document.querySelector('#Text').innerText = "نتیجه: " + i; // چاپ i در Text
+            } else {// در غیر این صورت این کار را انجام بده
+                alert("لطفاً عدد معتبر وارد کنید.");
+            }
+        }
+    </script>
+</body>
+</html>
+<!--
+    ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\
+    ||||||| ||||||||||| |||| ||||||||||||||||||||||||||        |||||||||||||||||||||||\
+    |||||| || ||||||||| ||||||||||||||||||||    |||||||| |||||||||||||||||||||||||||||\
+    ||||| |||| |||||||| |||| |||| || |||||| |||| ||||||||| |||||||||||||||||||||||||||\
+    ||||        ||||||| |||| |||| | |||||||       |||||||||| ||||||||   ||||||||||||||\
+    ||| |||||||| |||||| |||| ||||  |||||||| ||||||||||||||||| |||||| ||| |||||||||||||\
+    || |||||||||| ||||| |||| |||| |||||||||  ||| ||||||||||||| |||||    ||||||||||||||\
+    || |||||||||| ||||| |||| |||| ||||||||||    |||||||        ||||||||||  |||||||||||\
+    ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\
+-->
